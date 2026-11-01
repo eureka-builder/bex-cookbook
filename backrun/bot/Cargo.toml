@@ -1,0 +1,40 @@
+[package]
+name = "bex-backrun"
+version = "0.1.0"
+edition = "2021"
+description = "An open-source backrun searcher for BEX (Builder Execution Extensions) on the Eureka builder"
+readme = "README.md"
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "bex-backrun"
+path = "src/main.rs"
+
+[lib]
+name = "bex_backrun"
+path = "src/lib.rs"
+
+[dependencies]
+alloy = { version = "1", default-features = false, features = ["sol-types", "signers", "signer-local", "provider-ws", "reqwest", "rpc-types-eth"] }
+uuid = { version = "1", features = ["v5"] }
+serde_json = "1"
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+url = { version = "2", features = ["serde"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time", "sync", "signal"] }
+futures = "0.3"
+async-stream = "0.3"
+reqwest = "0.13"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+rusqlite = { version = "0.41.0", features = ["bundled"] }
+
+[dev-dependencies]
+wiremock = "0.6"
+# already in the tree through alloy's provider-ws; a mock WS server for head tests
+tokio-tungstenite = "0.28"

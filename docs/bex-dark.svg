@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 470" width="960" height="470" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e6edf3"/>
+    </marker>
+    <marker id="arrowg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#3fb990"/>
+    </marker>
+    <marker id="arrowa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#f0894b"/>
+    </marker>
+  </defs>
+
+  <!-- Searcher -->
+  <rect x="20" y="40" width="200" height="330" rx="10" fill="#161b22" stroke="#30393f"/>
+  <text x="120" y="70" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">User</text>
+  <rect x="48" y="100" width="164" height="172" rx="8" fill="#0d1117" stroke="#30393f"/>
+  <rect x="43" y="95" width="164" height="172" rx="8" fill="#0d1117" stroke="#30393f"/>
+  <rect x="38" y="90" width="164" height="172" rx="8" fill="#0d1117" stroke="#e6edf3"/>
+  <text x="120" y="112" text-anchor="middle" font-weight="600" fill="#e6edf3">request, block N+1</text>
+  <line x1="52" y1="122" x2="188" y2="122" stroke="#30393f"/>
+  <text x="52" y="141" font-size="12" font-weight="600" fill="#f0894b">compute</text>
+  <text x="52" y="158" font-size="12" fill="#e6edf3">your EVM program</text>
+  <text x="52" y="226" font-size="12" font-weight="600" fill="#3fb990">execute</text>
+  <text x="52" y="176" font-size="12" fill="#9aa7b0">and its calldata</text>
+  <text x="52" y="244" font-size="12" fill="#e6edf3">transaction template</text>
+  <text x="120" y="292" text-anchor="middle" font-size="12" fill="#e6edf3">one request per task,</text>
+  <text x="120" y="308" text-anchor="middle" font-size="12" fill="#e6edf3">as many as you like</text>
+  <text x="120" y="336" text-anchor="middle" font-size="11" fill="#9aa7b0">no gas, no mempool,</text>
+  <text x="120" y="352" text-anchor="middle" font-size="11" fill="#9aa7b0">no transaction of its own</text>
+
+  <line x1="220" y1="165" x2="256" y2="165" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="238" y="186" text-anchor="middle" font-size="10" fill="#9aa7b0">each<tspan x="238" dy="12">block</tspan></text>
+
+  <!-- Builder -->
+  <rect x="260" y="20" width="470" height="430" rx="10" fill="#161b22" stroke="#30393f"/>
+  <text x="495" y="48" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Builder, assembling block N+1</text>
+
+  <!-- block lane -->
+  <rect x="280" y="64" width="180" height="300" rx="8" fill="#0d1117" stroke="#30393f"/>
+  <text x="370" y="86" text-anchor="middle" font-size="12" font-weight="600" fill="#e6edf3">block N+1</text>
+  <text x="370" y="101" text-anchor="middle" font-size="10" fill="#9aa7b0">on-chain: what lands</text>
+
+  <!-- compute lane -->
+  <rect x="480" y="64" width="230" height="300" rx="8" fill="none" stroke="#f0894b" stroke-dasharray="5 4"/>
+  <text x="595" y="86" text-anchor="middle" font-size="12" font-weight="600" fill="#f0894b">compute</text>
+  <text x="595" y="101" text-anchor="middle" font-size="10" fill="#9aa7b0">off-chain, on the state so far</text>
+
+  <!-- rows: y0 = 118, step 30 -->
+  <rect x="294" y="118" width="152" height="20" rx="4" fill="#0d1117" stroke="#30393f"/>
+  <text x="304" y="132" font-size="11" fill="#9aa7b0">bundle</text>
+  <text x="494" y="132" font-size="11" fill="#9aa7b0">run program → nothing</text>
+
+  <rect x="294" y="148" width="152" height="20" rx="4" fill="#0d1117" stroke="#30393f"/>
+  <text x="304" y="162" font-size="11" fill="#9aa7b0">bundle</text>
+  <text x="494" y="162" font-size="11" fill="#9aa7b0">run program → nothing</text>
+
+  <rect x="294" y="178" width="152" height="20" rx="4" fill="#0d1117" stroke="#30393f"/>
+  <text x="304" y="192" font-size="11" fill="#9aa7b0">bundle</text>
+  <text x="494" y="192" font-size="11" fill="#9aa7b0">run program → nothing</text>
+
+  <rect x="294" y="208" width="152" height="20" rx="4" fill="#f0894b"/>
+  <text x="304" y="222" font-size="11" font-weight="600" fill="#0d1117">the state you wait for</text>
+  <rect x="494" y="208" width="204" height="40" rx="4" fill="#2a1d14" stroke="#f0894b"/>
+  <text x="504" y="223" font-size="11" font-weight="600" fill="#f0894b">run program → plan</text>
+  <text x="504" y="240" font-size="10" fill="#e6edf3">the calldata for execute</text>
+
+  <path d="M494 228 L476 228 L476 258 L452 258" fill="none" stroke="#3fb990" stroke-width="1.5" marker-end="url(#arrowg)"/>
+
+  <rect x="294" y="248" width="152" height="20" rx="4" fill="#3fb990"/>
+  <text x="304" y="262" font-size="11" font-weight="600" fill="#0d1117">execute(plan)</text>
+  <text x="494" y="270" font-size="11" fill="#3fb990">it pays its way: the builder</text>
+  <text x="494" y="284" font-size="11" fill="#3fb990">signs it and places it next</text>
+
+  <rect x="294" y="298" width="152" height="20" rx="4" fill="#0d1117" stroke="#30393f"/>
+  <text x="304" y="312" font-size="11" fill="#9aa7b0">bundle</text>
+  <text x="494" y="312" font-size="11" fill="#9aa7b0">run program → nothing</text>
+
+  <text x="370" y="346" text-anchor="middle" font-size="12" fill="#9aa7b0">…</text>
+  <text x="595" y="346" text-anchor="middle" font-size="12" fill="#9aa7b0">…</text>
+
+  <!-- lane captions -->
+  <text x="280" y="388" font-size="11" font-weight="600" fill="#3fb990">execute</text>
+  <text x="280" y="404" font-size="11" fill="#e6edf3">a small on-chain transaction that</text>
+  <text x="280" y="419" font-size="11" fill="#e6edf3">runs the plan and pays the builder.</text>
+  <text x="280" y="434" font-size="11" fill="#e6edf3">The only part that lands.</text>
+  <text x="500" y="388" font-size="11" font-weight="600" fill="#f0894b">compute</text>
+  <text x="500" y="404" font-size="11" fill="#e6edf3">your logic, in the builder's EVM on the</text>
+  <text x="500" y="419" font-size="11" fill="#e6edf3">block's live state. No gas, never in the</text>
+  <text x="500" y="434" font-size="11" fill="#e6edf3">block. Repeated after every bundle.</text>
+
+  <line x1="730" y1="165" x2="766" y2="165" stroke="#e6edf3" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="748" y="186" text-anchor="middle" font-size="10" fill="#9aa7b0">sealed<tspan x="748" dy="12">block</tspan></text>
+
+  <!-- Chain -->
+  <rect x="770" y="40" width="170" height="330" rx="10" fill="#161b22" stroke="#30393f"/>
+  <text x="855" y="70" text-anchor="middle" font-size="15" font-weight="600" fill="#e6edf3">Chain</text>
+  <rect x="788" y="90" width="134" height="104" rx="8" fill="#0d1117" stroke="#30393f"/>
+  <text x="855" y="112" text-anchor="middle" font-weight="600" fill="#e6edf3">block N+1</text>
+  <rect x="802" y="124" width="106" height="11" rx="3" fill="#0d1117" stroke="#30393f"/>
+  <rect x="802" y="140" width="106" height="11" rx="3" fill="#f0894b"/>
+  <rect x="802" y="156" width="106" height="11" rx="3" fill="#3fb990"/>
+  <text x="855" y="184" text-anchor="middle" font-size="10" fill="#9aa7b0">trigger, then execute</text>
+  <text x="855" y="222" text-anchor="middle" font-size="11" fill="#9aa7b0">the compute left no trace</text>
+  <text x="855" y="262" text-anchor="middle" font-weight="600" fill="#e6edf3">paid, same transaction</text>
+  <text x="855" y="286" text-anchor="middle" font-size="12" fill="#e6edf3">gas and fee →</text>
+  <text x="855" y="306" text-anchor="middle" font-size="12" fill="#e6edf3">block.coinbase</text>
+</svg>

@@ -1,0 +1,22 @@
+[profile.default]
+src = "src"
+test = "test"
+script = "script"
+libs = ["lib"]
+solc = "0.8.26"
+evm_version = "cancun"
+optimizer = true
+# The highest value that keeps the solver 256 bytes or more under the 24,576-byte code size limit (EIP-170).
+optimizer_runs = 319
+via_ir = false
+# The remappings go into the metadata hash, so into the CREATE2 address: use remappings.txt only, never what
+# forge finds inside lib/ (it differs between a plain and a recursive submodule checkout).
+auto_detect_remappings = false
+# The metadata settings, explicit so a forge with other defaults builds the same address.
+bytecode_hash = "ipfs"
+cbor_metadata = true
+use_literal_content = false
+fs_permissions = [{ access = "read", path = "./" }, { access = "read-write", path = "./out-runtime" }, { access = "read-write", path = "./deploy" }]
+
+[rpc_endpoints]
+mainnet = "${ETH_RPC_URL}"

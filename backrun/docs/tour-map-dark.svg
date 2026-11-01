@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 668" width="1240" height="668" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>bex-backrun as a transit map: every station is a file, a train rides one block from new head to landing</title>
+<style>@media (prefers-reduced-motion: reduce) { .train { display: none } }</style>
+<rect width="1240" height="668" rx="14" fill="#151d25"/>
+<rect x="590" y="392" width="640" height="168" rx="16" fill="#12291f"/>
+<text x="606" y="412" font-size="11" letter-spacing="1.5" fill="#98a5b1">COMPUTE · IN THE BUILDER'S EVM · OFF-CHAIN, FREE</text>
+<rect x="420" y="448" width="160" height="112" rx="16" fill="#2a2216"/>
+<text x="430" y="538" font-size="10.5" letter-spacing="1.5" fill="#98a5b1">EXECUTE</text>
+<text x="430" y="552" font-size="10.5" letter-spacing="1.5" fill="#98a5b1">ON-CHAIN</text>
+<text x="906" y="614" font-size="11.5" font-style="italic" fill="#98a5b1">solver.hex rides in every request</text>
+<path d="M 100 80 L 250 80 L 400 80 L 400 210" fill="none" stroke="#efad4a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 110 210 L 255 210 L 400 210 L 515 210 L 625 210 L 735 210 L 845 210 L 955 210 L 1065 210 L 1170 210 L 1170 330" fill="none" stroke="#5d94f2" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 110 210 L 110 320 L 250 320" fill="none" stroke="#cf7cc6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 1170 330 L 1170 430 L 1090 510 L 980 510 L 870 510 L 760 510 L 650 510 L 510 510 L 340 510" fill="none" stroke="#36c288" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 340 510 L 340 410 L 225 410 L 110 410" fill="none" stroke="#5d94f2" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 340 510 L 340 610" fill="none" stroke="#cf7cc6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 510 510 L 510 610 L 680 610 L 840 610" fill="none" stroke="#8f9cab" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="train"><circle r="16" fill="none" stroke="#e5ebf0" stroke-width="2.5" opacity=".5"><animate attributeName="r" values="10;20;10" dur="1.6s" repeatCount="indefinite"/></circle><circle r="8" fill="#e5ebf0" stroke="#151d25" stroke-width="3"/><animateMotion dur="26s" repeatCount="indefinite" path="M 625 210 L 735 210 L 845 210 L 955 210 L 1065 210 L 1170 210 L 1170 330 L 1170 430 L 1090 510 L 980 510 L 870 510 L 760 510 L 650 510 L 510 510 L 340 510 L 340 410 L 225 410 L 110 410"/></g>
+<circle cx="100" cy="80" r="7.5" fill="#151d25" stroke="#efad4a" stroke-width="4"/>
+<text x="100" y="110" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">Dune rows</text>
+<circle cx="250" cy="80" r="7.5" fill="#151d25" stroke="#efad4a" stroke-width="4"/>
+<text x="250" y="110" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">build.py</text>
+<circle cx="400" cy="80" r="7.5" fill="#151d25" stroke="#efad4a" stroke-width="4"/>
+<text x="422" y="85" text-anchor="start" font-size="13.5" font-weight="700" fill="#e5ebf0">cycles.toml</text>
+<circle cx="110" cy="210" r="11" fill="#151d25" stroke="#e5ebf0" stroke-width="4.5"/>
+<text x="110" y="186" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">main.rs</text>
+<circle cx="255" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="255" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">config.rs</text>
+<circle cx="400" cy="210" r="11" fill="#151d25" stroke="#e5ebf0" stroke-width="4.5"/>
+<text x="400" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">cycles.rs</text>
+<circle cx="515" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="515" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">startup.rs</text>
+<circle cx="625" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="625" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">head.rs</text>
+<circle cx="735" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="735" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">run.rs</text>
+<circle cx="845" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="845" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">groups.rs</text>
+<circle cx="955" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="955" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">floor.rs</text>
+<circle cx="1065" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="1065" y="240" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">request.rs</text>
+<circle cx="1170" cy="210" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="1170" y="186" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">sender.rs</text>
+<circle cx="1170" cy="330" r="11" fill="#151d25" stroke="#e5ebf0" stroke-width="4.5"/>
+<text x="1148" y="335" text-anchor="end" font-size="13.5" font-weight="700" fill="#e5ebf0">BEX endpoint</text>
+<circle cx="1170" cy="430" r="7.5" fill="#151d25" stroke="#36c288" stroke-width="4"/>
+<text x="1148" y="435" text-anchor="end" font-size="13.5" font-weight="700" fill="#e5ebf0">CycleSolver.sol</text>
+<circle cx="1090" cy="510" r="7.5" fill="#151d25" stroke="#36c288" stroke-width="4"/>
+<text x="1090" y="540" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">RateFilter.sol</text>
+<circle cx="980" cy="510" r="7.5" fill="#151d25" stroke="#36c288" stroke-width="4"/>
+<text x="980" y="486" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">ClosedForm.sol</text>
+<circle cx="870" cy="510" r="7.5" fill="#151d25" stroke="#36c288" stroke-width="4"/>
+<text x="870" y="540" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">InRange.sol</text>
+<circle cx="760" cy="510" r="7.5" fill="#151d25" stroke="#36c288" stroke-width="4"/>
+<text x="760" y="486" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">LegSim.sol</text>
+<circle cx="650" cy="510" r="7.5" fill="#151d25" stroke="#36c288" stroke-width="4"/>
+<text x="650" y="540" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">StepEdge.sol</text>
+<circle cx="510" cy="510" r="11" fill="#151d25" stroke="#e5ebf0" stroke-width="4.5"/>
+<text x="510" y="486" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">CycleExecutor.sol</text>
+<circle cx="340" cy="510" r="11" fill="#151d25" stroke="#e5ebf0" stroke-width="4.5"/>
+<text x="318" y="515" text-anchor="end" font-size="13.5" font-weight="700" fill="#e5ebf0">CycleExecuted</text>
+<circle cx="340" cy="410" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="362" y="415" text-anchor="start" font-size="13.5" font-weight="700" fill="#e5ebf0">track.rs</text>
+<circle cx="225" cy="410" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="225" y="440" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">store.rs</text>
+<circle cx="110" cy="410" r="7.5" fill="#151d25" stroke="#5d94f2" stroke-width="4"/>
+<text x="110" y="440" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">status.rs</text>
+<circle cx="110" cy="320" r="7.5" fill="#151d25" stroke="#cf7cc6" stroke-width="4"/>
+<text x="110" y="350" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">run.sh</text>
+<circle cx="250" cy="320" r="7.5" fill="#151d25" stroke="#cf7cc6" stroke-width="4"/>
+<text x="250" y="350" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">simulate.rs</text>
+<circle cx="340" cy="610" r="7.5" fill="#151d25" stroke="#cf7cc6" stroke-width="4"/>
+<text x="318" y="615" text-anchor="end" font-size="13.5" font-weight="700" fill="#e5ebf0">verify_landing.py</text>
+<circle cx="510" cy="610" r="7.5" fill="#151d25" stroke="#8f9cab" stroke-width="4"/>
+<text x="510" y="640" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">Create2Deploy.s.sol</text>
+<circle cx="680" cy="610" r="7.5" fill="#151d25" stroke="#8f9cab" stroke-width="4"/>
+<text x="680" y="640" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">metamask.html</text>
+<circle cx="840" cy="610" r="7.5" fill="#151d25" stroke="#8f9cab" stroke-width="4"/>
+<text x="840" y="640" text-anchor="middle" font-size="13.5" font-weight="700" fill="#e5ebf0">RuntimeCode.s.sol</text>
+</svg>

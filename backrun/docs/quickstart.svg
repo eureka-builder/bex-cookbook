@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 284" width="960" height="284" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="12">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#67757c"/></marker></defs>
+<rect x="20.0" y="30" width="212.0" height="222" rx="10" fill="#f2f5f6" stroke="#c2561b" stroke-width="1.5"/>
+<circle cx="44.0" cy="56" r="12" fill="#c2561b"/>
+<text x="44.0" y="60.5" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">1</text>
+<text x="64.0" y="61" font-size="15" font-weight="600" fill="#1f2a30">Get admitted</text>
+<text x="36.0" y="88" font-size="11" fill="#c2561b">once, in Telegram</text>
+<text x="36.0" y="112" fill="#1f2a30">send the builder your signer</text>
+<text x="36.0" y="128" fill="#1f2a30">address, new or existing</text>
+<rect x="32.0" y="160" width="188.0" height="26" rx="5" fill="#e4eaec"/>
+<text x="40.0" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#1f2a30">t.me/EurekaBuilder</text>
+<line x1="36.0" y1="226" x2="216.0" y2="226" stroke="#cdd5d8"/>
+<text x="36.0" y="243" font-size="11.5" fill="#67757c">you get <tspan font-weight="600" fill="#c2561b">access</tspan></text>
+<line x1="235.0" y1="141.0" x2="253.0" y2="141.0" stroke="#67757c" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="256.0" y="30" width="212.0" height="222" rx="10" fill="#f2f5f6" stroke="#cdd5d8" stroke-width="1"/>
+<circle cx="280.0" cy="56" r="12" fill="#1f2a30"/>
+<text x="280.0" y="60.5" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">2</text>
+<text x="300.0" y="61" font-size="15" font-weight="600" fill="#1f2a30">Build and simulate</text>
+<text x="272.0" y="88" font-size="11" fill="#67757c">once, a few minutes</text>
+<text x="272.0" y="112" fill="#1f2a30">build your requests, then</text>
+<text x="272.0" y="128" fill="#1f2a30">dry-run them: bex_simulate</text>
+<text x="272.0" y="154" font-size="10" letter-spacing="0.4" fill="#67757c">THIS BOT</text>
+<rect x="268.0" y="160" width="188.0" height="58" rx="5" fill="#e4eaec"/>
+<text x="276.0" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#1f2a30">cargo build --release</text>
+<text x="276.0" y="192" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#1f2a30">forge script RuntimeCode</text>
+<text x="276.0" y="208" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#1f2a30">ops/run.sh simulate</text>
+<line x1="272.0" y1="226" x2="452.0" y2="226" stroke="#cdd5d8"/>
+<text x="272.0" y="243" font-size="11.5" fill="#67757c">you see <tspan font-weight="600" fill="#1f2a30">a result per request</tspan></text>
+<line x1="471.0" y1="141.0" x2="489.0" y2="141.0" stroke="#67757c" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="492.0" y="30" width="212.0" height="222" rx="10" fill="#f2f5f6" stroke="#cdd5d8" stroke-width="1"/>
+<circle cx="516.0" cy="56" r="12" fill="#1f2a30"/>
+<text x="516.0" y="60.5" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">3</text>
+<text x="536.0" y="61" font-size="15" font-weight="600" fill="#1f2a30">Run</text>
+<text x="508.0" y="88" font-size="11" fill="#67757c">every block</text>
+<text x="508.0" y="112" fill="#1f2a30">one bex_sendBundle per</text>
+<text x="508.0" y="128" fill="#1f2a30">request, every block</text>
+<text x="508.0" y="154" font-size="10" letter-spacing="0.4" fill="#67757c">THIS BOT</text>
+<rect x="504.0" y="160" width="188.0" height="26" rx="5" fill="#e4eaec"/>
+<text x="512.0" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#1f2a30">ops/run.sh run</text>
+<line x1="508.0" y1="226" x2="688.0" y2="226" stroke="#cdd5d8"/>
+<text x="508.0" y="243" font-size="11.5" fill="#67757c">the builder <tspan font-weight="600" fill="#1f2a30">places what pays</tspan></text>
+<line x1="707.0" y1="141.0" x2="725.0" y2="141.0" stroke="#67757c" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="728.0" y="30" width="212.0" height="222" rx="10" fill="#f2f5f6" stroke="#1f8468" stroke-width="1.5"/>
+<circle cx="752.0" cy="56" r="12" fill="#1f8468"/>
+<text x="752.0" y="60.5" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">4</text>
+<text x="772.0" y="61" font-size="15" font-weight="600" fill="#1f2a30">Watch it land</text>
+<text x="744.0" y="88" font-size="11" fill="#1f8468">any time</text>
+<text x="744.0" y="112" fill="#1f2a30">your executions on chain,</text>
+<text x="744.0" y="128" fill="#1f2a30">found by your tag</text>
+<text x="744.0" y="154" font-size="10" letter-spacing="0.4" fill="#67757c">THIS BOT</text>
+<rect x="740.0" y="160" width="188.0" height="26" rx="5" fill="#e4eaec"/>
+<text x="748.0" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#1f2a30">bex-backrun status</text>
+<line x1="744.0" y1="226" x2="924.0" y2="226" stroke="#cdd5d8"/>
+<text x="744.0" y="243" font-size="11.5" fill="#67757c">you see <tspan font-weight="600" fill="#1f8468">sent · landed</tspan></text>
+<text x="480.0" y="272" text-anchor="middle" font-size="12" fill="#67757c">No signer yet? <tspan font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" fill="#1f2a30">ops/run.sh probe</tspan> runs this bot's solver on your own node, with no builder involved.</text>
+</svg>

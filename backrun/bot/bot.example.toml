@@ -1,0 +1,61 @@
+# bot.toml with every setting and its default, as the reference bot runs it on mainnet.
+# Relative paths are relative to the directory of this file.
+
+# Builder BEX endpoints. Each request goes to each endpoint.
+endpoints = ["https://rpc.eurekabuilder.xyz"]
+# An Ethereum mainnet JSON-RPC node: heads, eth_call probes, logs.
+rpc_http = "http://127.0.0.1:8545"
+# Optional: heads over WS (newHeads) arrive sooner than polling rpc_http every 500 ms.
+# While the WS is down the bot polls rpc_http.
+# rpc_ws = "ws://127.0.0.1:8546"
+
+# Code mode: the bot sends the solver's runtime code as bex.compute.code, so no solver is deployed.
+# Make the file with `forge script script/RuntimeCode.s.sol` in contracts/ (out-runtime/solver.hex).
+solver_code = "solver.hex"
+# A deployed solver instead of code mode: set `solver` and remove `solver_code`.
+# solver = "0x..."
+# `simulate --override-code` only: the executor's runtime code, installed at `executor` by a
+# state override, so no executor needs to be deployed. `run` never uses it.
+# executor_code = "executor.hex"
+
+# The shared mainnet executor (no owner, CREATE2), deployed at block 26319273: see contracts/README.md.
+executor = "0x12EAe402fA25B6B656c65fdff06990f29298449B"
+# Mainnet WETH. Used for the ETH-anchor check in cycles.toml.
+weth = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+# The env var that holds the signer key. A `signer_key` field is an error.
+signer_key_env = "BEX_SIGNER_KEY"
+
+# Share of the profit that goes to block.coinbase, in bps (1..=10000). The rest goes to
+# payout_address. The builder signs the execute only when the coinbase gains more than the gas,
+# whatever the share.
+builder_share_bps = 5000
+# Who gets the rest (Plan.recipient). Default: the signer address. An address that cannot take
+# ETH (a contract without receive) makes every execute revert.
+# payout_address = "0x..."
+# The bot sends min_profit_wei and weiPerGas = ceil(next basefee * gas_margin * 10000 / builder_share_bps).
+# The solver prices the plan's gas: the profit floor is max(min_profit_wei, weiPerGas * gas(plan), 1).
+min_profit_wei = "0"
+gas_margin = 1.0
+
+# Set equal to the pending limit the builder gives your signer. The builder accepts requests
+# above that limit and drops them.
+pending_cap = 64
+# More groups than pending_cap: "top" sends the first ones in file order, "all" refuses to start.
+select = "top"
+# Cycles per request (1..=8). Cycles that share a pool with the group's first cycle go in one
+# solveMany request, and the builder runs the best plan of the group.
+group_size = 4
+# Requests per group per block (1..=4). More than 1 needs code mode.
+request_copies = 1
+# "cycle" (default): one replacementUuid per group; each block's request replaces the last.
+# "parity": one per (group, target block mod 2); halves the budget (pending_cap / 2).
+# uuid_mode = "cycle"
+
+# Wait after a new head before the first send. Keep it short: the builder admits requests for a
+# block until about 3 s before the slot, and does not evaluate a request admitted later.
+send_delay_ms = 200
+# Timeout of one bex_sendBundle call.
+# send_timeout_ms = 3000
+
+# SQLite file for sends and landings.
+db_path = "bex-backrun.sqlite"

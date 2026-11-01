@@ -1,0 +1,18 @@
+# Two mainnet cycles from cycles/cycles.toml. Each cycle starts and ends on ETH: WETH on a V2/V3
+# leg, address(0) on a V4 leg. One cycle can start on WETH and end on V4 ETH (the second one here).
+
+# WETH -> USDC on V3 0.05%, USDC -> WETH on V3 0.01%.
+[[cycles]]
+name = "eth_usdc__v3_500_v3_100"
+legs = [
+  { version = 3, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", fee = 500, tick_spacing = 10 },
+  { version = 3, token_in = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 100, tick_spacing = 1 },
+]
+
+# WETH -> USDC on V3 0.01%, USDC -> ETH on V4 0.01% (hookless pool).
+[[cycles]]
+name = "eth_usdc__v3_100_v4_100"
+legs = [
+  { version = 3, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", fee = 100, tick_spacing = 1 },
+  { version = 4, token_in = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", token_out = "0x0000000000000000000000000000000000000000", fee = 100, tick_spacing = 1 },
+]

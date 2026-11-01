@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bex-backrun Deploy</title>
+<style>
+  :root { --bg: #fff; --fg: #1a1a1a; --muted: #666; --line: #ddd; --ok: #11713b; --bad: #b3261e; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #161616; --fg: #eee; --muted: #aaa; --line: #333; --ok: #5fd08a; --bad: #ff8a80; }
+  }
+  body { background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, sans-serif; margin: 0 auto; max-width: 760px; padding: 24px 16px; }
+  h1 { font-size: 20px; }
+  table { border-collapse: collapse; width: 100%; }
+  td { border-top: 1px solid var(--line); padding: 6px 8px 6px 0; vertical-align: top; }
+  td:first-child { color: var(--muted); white-space: nowrap; }
+  code { font: 13px ui-monospace, monospace; word-break: break-all; }
+  button { font: inherit; padding: 8px 16px; margin: 12px 8px 12px 0; cursor: pointer; }
+  button:disabled { cursor: default; opacity: .5; }
+  #status { font-weight: 600; }
+  .ok { color: var(--ok); } .bad { color: var(--bad); }
+  #log { color: var(--muted); font: 13px ui-monospace, monospace; white-space: pre-wrap; }
+  #which { border: 3px solid var(--fg); border-radius: 6px; padding: 8px 16px; font-size: 22px; font-weight: 700; margin: 12px 0; }
+  .verify { border: 2px solid var(--fg); border-radius: 6px; padding: 12px 16px; margin: 16px 0; }
+  .verify code { font-size: 15px; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Deploy bex-backrun (Ethereum mainnet)</h1>
+<div id="which">Deploying: …</div>
+<p>One transaction to the canonical CREATE2 deployer. The data comes from <code id="file">…</code>, written by
+<code id="script">…</code>. The contract has no owner: the account that sends this gets no rights over it.
+Add <code>?contract=solver</code> to the URL for the CycleSolver; the default is the CycleExecutor.</p>
+<div class="verify">
+  <div><span class="name">Contract</span> address (predicted): <code id="address">…</code></div>
+  <div>Init code hash: <code id="initHash">…</code></div>
+  <p><strong>Compare both (and the contract name above) with the table in <code>contracts/README.md</code> before you confirm in MetaMask.</strong>
+  In MetaMask, check that "to" is <code>0x4e59b44847b379578588920cA78FbF26c0B4956C</code> and the value is 0.</p>
+</div>
+<table>
+  <tr><td>Deployer (to)</td><td><code id="to">…</code></td></tr>
+  <tr><td>Salt</td><td><code id="salt">…</code></td></tr>
+  <tr><td>Data</td><td><code id="dataLen">…</code></td></tr>
+  <tr><td>Account</td><td><code id="account">not connected</code></td></tr>
+  <tr><td>Estimated gas</td><td><code id="gas">…</code></td></tr>
+  <tr><td>Deploy transaction</td><td><code id="pending">not sent</code></td></tr>
+</table>
+<button id="connect" disabled>Connect MetaMask</button>
+<button id="send" disabled>Send deploy transaction</button>
+<p id="status">Loading…</p>
+<div id="log"></div>
+<script>
+"use strict";
+const DEPLOYER = "0x4e59b44847b379578588920ca78fbf26c0b4956c";
+const $ = (id) => document.getElementById(id);
+// `sent` is the deploy tx hash once one is sent. From then on Send stays disabled, also across Connect
+// and page reloads (the hash is kept in localStorage for this address until the tx fails).
+let tx, account, gas, sent = null;
+// ?contract=solver selects the solver; anything else (or nothing) is the executor.
+const SOLVER = new URLSearchParams(location.search).get("contract") === "solver";
+const NAME = SOLVER ? "CycleSolver" : "CycleExecutor";
+const FILE = SOLVER ? "out/deploy-solver-tx.json" : "out/deploy-tx.json"; // written by SCRIPT, not committed
+const HEX = SOLVER ? "solver.hex" : "executor.hex"; // from script/RuntimeCode.s.sol
+const SCRIPT = SOLVER ? "forge script script/Create2Deploy.s.sol:Create2DeploySolver" : "forge script script/Create2Deploy.s.sol:Create2Deploy";
+
+function status(msg, cls) { $("status").textContent = msg; $("status").className = cls || ""; }
+function log(msg) { $("log").textContent += new Date().toISOString().slice(11, 19) + "  " + msg + "\n"; }
+const rpc = (method, params = []) => window.ethereum.request({ method, params });
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const key = () => (SOLVER ? "bex-backrun-solver-deploy:" : "bex-backrun-executor-deploy:") + tx.address.toLowerCase();
+function remember(h) { try { localStorage.setItem(key(), h); } catch (e) {} }
+function recall() { try { return localStorage.getItem(key()); } catch (e) { return null; } }
+function forget() { try { localStorage.removeItem(key()); } catch (e) {} }
+
+function markSent(h) {
+  sent = h;
+  $("send").disabled = true;
+  $("pending").textContent = h + " (Send is disabled for this deploy)";
+}
+
+async function load() {
+  document.title = NAME + " Deploy";
+  $("which").textContent = "Deploying: " + NAME;
+  $("file").textContent = FILE;
+  $("script").textContent = SCRIPT;
+  document.querySelector(".name").textContent = NAME;
+  const r = await fetch(FILE, { cache: "no-store" });
+  if (!r.ok) throw new Error(FILE + ": HTTP " + r.status + ". Run `" + SCRIPT + "` first, then serve this folder over http (see README).");
+  tx = await r.json();
+  if (tx.to.toLowerCase() !== DEPLOYER) throw new Error(FILE + ": to is not the canonical deployer");
+  if (!tx.data.toLowerCase().startsWith(tx.salt.toLowerCase())) throw new Error(FILE + ": data does not start with the salt");
+  $("address").textContent = tx.address;
+  $("to").textContent = tx.to;
+  $("salt").textContent = tx.salt;
+  $("initHash").textContent = tx.initCodeHash;
+  $("dataLen").textContent = (tx.data.length - 2) / 2 + " bytes (salt ++ init code)";
+  if (!window.ethereum) { status("No wallet found: open this page in a browser with MetaMask.", "bad"); return; }
+  $("connect").disabled = false;
+  const h = recall();
+  if (h) { markSent(h); log("resuming the deploy tx sent earlier: " + h); return watch(); }
+  status("Connect MetaMask.");
+}
+
+// Returns true when the wallet is on mainnet and the contract is not deployed yet.
+async function preflight() {
+  const chainId = await rpc("eth_chainId");
+  if (chainId !== "0x1") { status("Wrong network (chainId " + chainId + "). Switch MetaMask to Ethereum mainnet.", "bad"); return false; }
+  const code = await rpc("eth_getCode", [tx.address, "latest"]);
+  if (code !== "0x") { status("Code already exists at " + tx.address + ". Not sending. Compare it with out-runtime/" + HEX + " (see README)."); return false; }
+  return true;
+}
+
+async function connect() {
+  try {
+    [account] = await rpc("eth_requestAccounts");
+    $("account").textContent = account;
+    if (sent) { status("The deploy tx " + sent + " is already sent. Waiting for it; Send stays disabled."); return; }
+    $("send").disabled = true;
+    if (!(await preflight())) return;
+    gas = BigInt(await rpc("eth_estimateGas", [{ from: account, to: tx.to, data: tx.data, value: "0x0" }]));
+    $("gas").textContent = gas.toString() + " (sent with +20%)";
+    $("send").disabled = false;
+    status("Ready. Compare the address and init code hash with the README, then send.");
+  } catch (e) { status(e.message || String(e), "bad"); }
+}
+
+async function send() {
+  if (sent) return;
+  $("send").disabled = true;
+  try {
+    if (!(await preflight())) return;
+    const chainId = await rpc("eth_chainId"); // again, right before the wallet prompt
+    if (chainId !== "0x1") { status("Wrong network (chainId " + chainId + "). Not sent.", "bad"); return; }
+    const hash = await rpc("eth_sendTransaction", [{
+      from: account, to: tx.to, data: tx.data, value: "0x0", chainId: "0x1",
+      gas: "0x" + (gas * 12n / 10n).toString(16),
+    }]);
+    markSent(hash);
+    remember(hash);
+    log("sent " + hash);
+  } catch (e) {
+    status(e.message || String(e), "bad");
+    if (!sent) $("send").disabled = false;
+    return;
+  }
+  await watch();
+}
+
+// Polls until the contract has code (also if the tx was sped up or replaced in MetaMask) or the
+// sent tx fails. Code at a CREATE2 address comes from the init code that fixes the address, so no
+// byte compare here. A failed poll is logged and retried.
+async function watch() {
+  for (;;) {
+    try {
+      const code = await rpc("eth_getCode", [tx.address, "latest"]);
+      if (code !== "0x") {
+        status("Deployed: " + tx.address + " has code (" + (code.length - 2) / 2 + " bytes). Compare it with out-runtime/" + HEX + " (see README).", "ok");
+        return;
+      }
+      const receipt = await rpc("eth_getTransactionReceipt", [sent]);
+      if (receipt) {
+        log("mined in block " + parseInt(receipt.blockNumber, 16) + ", status " + receipt.status + ", gas used " + parseInt(receipt.gasUsed, 16));
+        if (receipt.status !== "0x1") {
+          forget();
+          status("The deploy tx reverted. Nothing was deployed. Reload the page to try again.", "bad");
+          return;
+        }
+      } else {
+        status("Waiting for " + sent + " to be mined…");
+      }
+    } catch (e) { log("poll failed (" + (e.message || e) + "), retrying"); }
+    await sleep(3000);
+  }
+}
+
+$("connect").onclick = connect;
+$("send").onclick = send;
+if (window.ethereum) {
+  window.ethereum.on?.("chainChanged", () => location.reload());
+  window.ethereum.on?.("accountsChanged", () => location.reload());
+}
+load().catch((e) => status(e.message || String(e), "bad"));
+</script>
+</body>
+</html>

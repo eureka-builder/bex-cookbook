@@ -1,0 +1,52 @@
+# The ETH/USD pin list: every ETH/USD same-pair 2-leg cycle and ETH/USD/USD triangle (USDC, USDT, DAI, USDS)
+# of an earlier 429-cycle set. Together they held 94% of the value that a replay of 2,000 mainnet blocks
+# could insert. Ordered by each cycle's insertable value in that replay, then by its value with
+# sandwiches counted, then by name. cycles/build.py puts these first in the rank order (--pin), in this order.
+eth_usdc__v3_500_v3_100
+eth_usdc_usdt__v3_500_v4_7_v3_100
+eth_usdt_usdc__v3_500_v4_7_v3_100
+eth_usdc_usdt__v3_100_v4_7_v3_100
+eth_usdc_usdt__v4_100_v4_8_v4_100
+eth_usdc_usdt__v3_100_v4_7_v3_500
+eth_usdc__v3_100_v3_500
+eth_usdc__v3_100_v4_100
+eth_usdt__v3_100_v4_100
+eth_usdt_usdc__v3_100_v4_7_v3_100
+eth_usdt__v3_500_v3_100
+eth_usdt_usds__v4_100_v4_5_v4_500
+eth_usdt_dai__v3_100_v4_68_v3_500
+eth_usdc__v4_100_v3_100
+eth_usdt__v3_100_v3_500
+eth_usdt_usdc__v3_100_v4_7_v3_500
+eth_usdc__v3_100_v2
+eth_dai_usdt__v3_500_v4_68_v3_100
+eth_dai_usdc__v3_500_v3_100_v3_100
+eth_usds_usdt__v4_500_v4_5_v4_100
+eth_usdt_usdc__v3_100_v3_100_v3_100
+eth_usdt_usdc__v4_100_v4_8_v4_100
+eth_usdt_dai__v4_100_v4_68_v4_1000
+eth_usdc_usdt__v3_100_v3_100_v3_100
+eth_usdt__v4_100_v3_500
+eth_usdc__v4_100_v3_500
+eth_usdt__v4_500_v4_100
+eth_usdt__v4_100_v3_100
+eth_usdc_usdt__v4_100_v4_10_v4_100
+eth_dai_usdt__v3_500_v3_100_v3_100
+eth_usdc__v4_1000_v4_100
+eth_usdc__v4_1001_v4_100
+eth_usdc__v4_1002_v4_100
+eth_usdc__v4_1004_v4_100
+eth_usdc__v4_1005_v4_100
+eth_usdc__v4_100_v4_1001
+eth_usdc__v4_100_v4_1002
+eth_usdc__v4_100_v4_1004
+eth_usdc__v4_100_v4_1005
+eth_usdc__v4_100_v4_500
+eth_usdc__v4_500_v4_100
+eth_usdc_dai__v3_100_v3_100_v3_500
+eth_usdc_usdt__v3_100_v4_7_v3_3000
+eth_usdc_usdt__v4_100_v4_7_v4_100
+eth_usdt__v4_100_v4_500
+eth_usdt_dai__v3_100_v3_100_v3_500
+eth_usdt_usdc__v4_100_v4_10_v4_100
+eth_usdt_usdc__v4_100_v4_7_v4_100

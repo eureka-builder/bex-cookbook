@@ -1,0 +1,57 @@
+[[cycles]]
+name = "v2_v3_100"
+legs = [
+	{ version = 2, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 3000, tick_spacing = 0 },
+	{ version = 3, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 100, tick_spacing = 1 },
+]
+
+[[cycles]]
+name = "v3_100_v2"
+legs = [
+	{ version = 3, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 100, tick_spacing = 1 },
+	{ version = 2, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 3000, tick_spacing = 0 },
+]
+
+[[cycles]]
+name = "v3_100_v3_500"
+legs = [
+	{ version = 3, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 100, tick_spacing = 1 },
+	{ version = 3, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 500, tick_spacing = 10 },
+]
+
+[[cycles]]
+name = "v3_500_v3_100"
+legs = [
+	{ version = 3, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 500, tick_spacing = 10 },
+	{ version = 3, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 100, tick_spacing = 1 },
+]
+
+[[cycles]]
+name = "v3_100_v4_100"
+legs = [
+	{ version = 3, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 100, tick_spacing = 1 },
+	{ version = 4, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x0000000000000000000000000000000000000000", fee = 100, tick_spacing = 1 },
+]
+
+[[cycles]]
+name = "v4_100_v3_100"
+legs = [
+	{ version = 4, token_in = "0x0000000000000000000000000000000000000000", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 100, tick_spacing = 1 },
+	{ version = 3, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 100, tick_spacing = 1 },
+]
+
+[[cycles]]
+name = "v3_100_v4_500_v2"
+legs = [
+	{ version = 3, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 100, tick_spacing = 1 },
+	{ version = 4, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0", fee = 500, tick_spacing = 10 },
+	{ version = 2, token_in = "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 3000, tick_spacing = 0 },
+]
+
+[[cycles]]
+name = "v2_v4_500_v3_100"
+legs = [
+	{ version = 2, token_in = "0x5fbdb2315678afecb367f032d93f642f64180aa3", token_out = "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0", fee = 3000, tick_spacing = 0 },
+	{ version = 4, token_in = "0x9fe46736679d2d9a65f0992f2272de9f3c7fa6e0", token_out = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", fee = 500, tick_spacing = 10 },
+	{ version = 3, token_in = "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512", token_out = "0x5fbdb2315678afecb367f032d93f642f64180aa3", fee = 100, tick_spacing = 1 },
+]

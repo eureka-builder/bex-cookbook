@@ -1,0 +1,10 @@
+[workspace]
+members = ["bot"]
+resolver = "2"
+
+# The oldest Rust that builds the locked dependencies (alloy 1.8 needs 1.91).
+[workspace.package]
+rust-version = "1.91"
+license = "BSD-3-Clause-Clear"
+repository = "https://github.com/eureka-builder/bex-cookbook"
+publish = false
