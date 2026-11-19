@@ -156,7 +156,7 @@ The builder runs one `bex_simulate` per signer and four per host at a time. It a
 `-32005` (busy). `simulate` retries after 100 ms, then 200, 400 and 800 ms (5 tries in all), and shows
 `[busy retries N]` in the row.
 
-A paced run spans several blocks (688 cycles take about 2.3 minutes at 5 calls per second). So `simulate`
+A paced run spans several blocks (at 5 calls per second, the mainnet set takes minutes). So `simulate`
 reads the head again every 6 s, and later requests target the new head + 1 with its basefee.
 
 #### Evaluation without a deploy

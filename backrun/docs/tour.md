@@ -47,7 +47,7 @@ Four ways through a review, depending on what you want to check.
 - **Express**: The whole idea in four stops: what is sent, who runs it, how it is solved, how it pays. [request.rs](#request) → [BEX endpoint](#builder) → [CycleSolver.sol](#solver) → [CycleExecutor.sol](#exec)
 - **The math line**: From a yes-or-no rate test to an exact optimum, including the sawtooth. [RateFilter.sol](#rate) → [ClosedForm.sol](#closed) → [InRange.sol](#inrange) → [LegSim.sol](#legsim) → [StepEdge.sol](#edge)
 - **Safety inspection**: Where funds move, what is refused up front, where keys could leak, how the address is pinned. [CycleExecutor.sol](#exec) → [cycles.rs](#cycles) → [startup.rs](#startup) → [sender.rs](#sender) → [Create2Deploy.s.sol](#create2) → [verify_landing.py](#verify)
-- **Data line**: How 30 days of mined arbitrage become the 688 cycles the bot sends, and how they are packed. [Dune rows](#dune) → [build.py](#build) → [cycles.toml](#toml) → [groups.rs](#groups)
+- **Data line**: How 30 days of mined arbitrage become the cycles the bot sends, and how they are packed. [Dune rows](#dune) → [build.py](#build) → [cycles.toml](#toml) → [groups.rs](#groups)
 
 ## Things that surprise reviewers
 
@@ -132,7 +132,7 @@ def one_per_pool_set(out):
 
 [`cycles/cycles.toml`](../cycles/cycles.toml)
 
-The timetable. 688 cycles, each a name and a list of legs. The bot sends them in file order, so the order is the strategy.
+The timetable. Each cycle is a name and a list of legs. The bot sends them in file order, so the order is the strategy.
 
 | Key part | What it does |
 |---|---|

@@ -2,9 +2,9 @@
 
 The mainnet cycle set of the bot. `build.py` writes two files from 30 days of mined arbitrage:
 
-- `cycles.toml`, the bot's `cycles` file: 688 cycles in the live order (see [Live order](#live-order)).
+- `cycles.toml`, the bot's `cycles` file: the cycles in the live order (see [Live order](#live-order)).
 - `contracts/test/fixtures/cycles.json`, the fork fixture. It holds every candidate cycle in rank order, both
-  orientations (1010 cycles). Every cycle of `cycles.toml` is in it, so the fork tests check the whole live set.
+  orientations. Every cycle of `cycles.toml` is in it, so the fork tests check the whole live set.
 
 ## Files
 
@@ -13,6 +13,7 @@ The mainnet cycle set of the bot. `build.py` writes two files from 30 days of mi
 | `build.py` | The build. Python 3.11 or later, stdlib only, deterministic. It runs offline from the committed caches. |
 | `test_build.py` | Unit tests: `python3 -m unittest cycles/test_build.py`. |
 | `mined/eth-anchor-30d.json` | Dune rows: ETH-anchored Uniswap V2/V3/hookless-V4 cycles by ordered pool path over 30 days, with each leg's pool, fee and tick spacing, the arb count, the clean profit (USD), the suspect profit (USD), and the clean arbs' count, median and max. It holds the SQL, the query id and the execution id. |
+| `mined/added.json` | Rows for cycles seen after that window, in the same format. The build reads them with the mined rows. |
 | `pins/live.txt` | The live order: the names that go first in `cycles.toml` (`--live`). |
 | `pins/eth-usd-48.txt` | The names that go first in the rank order (`--pin`). |
 | `tokens.json` | A cache of token symbols, used for names only. |
@@ -29,7 +30,7 @@ python3 cycles/build.py --pin ''        # no rank pins: rank order only
 ```
 
 A rebuild with no option change writes the same files. `--min-arbs` and `--top` change the fork fixture too.
-The build prints a summary (also in the `cycles.toml` header): counts by anchor, legs and versions, the profit
+The build prints a summary: counts by anchor, legs and versions, the profit
 covered, what it dropped and why, and what happened to each cycle of the file it replaces.
 
 To validate a new set, run the fork tests (they need an archive RPC):
@@ -51,18 +52,17 @@ ETH_RPC_URL=<archive rpc> forge test --match-test 'test_quietMarket_everyMinedCy
 
 A plain `python3 cycles/build.py` writes the live set in three steps:
 
-1. The candidate set: the mined rows after the filters below, in rank order (1010 cycles). This is also the fork
+1. The candidate set: the mined rows after the filters below, in rank order. This is also the fork
    fixture.
-2. The live order: the 166 names of `pins/live.txt` first, in that order, then the rest in rank order.
+2. The live order: the names of `pins/live.txt` first, in that order, then the rest in rank order.
    The first live order was 32 hand-picked cycles that cleared the profit floor in replays of recent mainnet
-   blocks, then rank order. The first 166 places are a hand-tuned order.
+   blocks, then rank order. The pinned places are a hand-tuned order.
 3. One orientation per pool set: a cycle whose set of pools is the same as an earlier cycle's is dropped. The
    reverse of a cycle uses the same pools, and the solver tries both orientations of every request
-   (`RateFilter.direction`), so the second orientation adds only compute. This drops 322 cycles.
+   (`RateFilter.direction`), so the second orientation adds only compute.
 
-With `group_size = 4` and `pending_cap = 64` (`bot/bot.example.toml`), the bot sends 64 groups that hold 205 of
-the 688 cycles (`test_example_config_selects_64_groups_of_205_cycles` in `bot/tests/cycles_export.rs`). The order
-decides which ones: the bot sends the first `pending_cap` groups in file order.
+The bot sends the first `pending_cap` groups of up to `group_size` cycles, in file order, so the order decides
+which cycles it sends (`test_example_config_fills_the_pending_cap` in `bot/tests/cycles_export.rs`).
 
 ## Pin files and your own set
 

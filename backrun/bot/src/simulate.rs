@@ -125,8 +125,8 @@ pub async fn simulate(
 }
 
 /// One `bex_simulate` per cycle, in file order, one call at a time: the builder runs one
-/// `bex_simulate` per signer at a time. A paced batch outlives its head (the 688 mainnet cycles
-/// take about 2.3 minutes), so the head is re-read every `head_refresh`. Later requests then target the new
+/// `bex_simulate` per signer at a time. A paced batch outlives its head (the mainnet set
+/// takes minutes), so the head is re-read every `head_refresh`. Later requests then target the new
 /// head + 1 and use its basefee for the floor. Each row records the target it used.
 pub async fn simulate_paced(
     cfg: &BotConfig,
