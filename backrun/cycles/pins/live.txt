@@ -1,8 +1,8 @@
-# The live order (688 cycles, `python3 cycles/build.py`).
-# These 166 cycles go first, in this order. The rest of the file follows in rank order,
+# The live order (`python3 cycles/build.py`).
+# These cycles go first, in this order. The rest of the file follows in rank order,
 # with one orientation per pool set (see cycles/README.md, "Live order").
 # The first version of this order was 32 hand-picked cycles that cleared the profit floor
-# in replays of recent mainnet blocks. The first 166 places are a hand-tuned order.
+# in replays of recent mainnet blocks. These places are a hand-tuned order.
 eth_usdc_usdt__v3_100_v4_7_v3_100
 eth_usdc__v3_100_v4_100
 eth_usdt__v3_100_v4_100

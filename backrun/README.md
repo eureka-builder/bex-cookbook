@@ -2,7 +2,7 @@
 
 **Backrun every block with no capital, no gas and no mempool race.**
 
-An open-source searcher for BEX on the Eureka builder. It sends 688 arbitrage cycles over Uniswap V2, V3 and V4,
+An open-source searcher for BEX on the Eureka builder. It sends hundreds of arbitrage cycles over Uniswap V2, V3 and V4,
 and its solver sizes each trade to the exact optimum, inside the block, right after the swap that opened the gap.
 
 Clone it, build it and simulate every cycle on the builder in minutes.
@@ -117,7 +117,7 @@ No signer yet? `ops/run.sh probe` runs the solver on your own node and prints ea
 | [How the solver finds the optimum](contracts/README.md#how-cyclesolver-works) | A rate check, a closed form, then exact swap steps. |
 | [Safety model](contracts/README.md#safety-model) | No owner, no funds at rest, no approvals, a profit floor. |
 | [Cycles](bot/README.md#cycles) | The file format and how to add a cycle. |
-| [The cycle set](cycles/README.md) | How the 688 cycles are mined and ordered. |
+| [The cycle set](cycles/README.md) | How the cycles are mined and ordered. |
 | [Running and checking a landing](ops/README.md) | `run.sh` and its env vars, `verify_landing.py`. |
 | [Known limits](bot/README.md#limits) | Latency, the pending limit, solver gas, one builder. |
 
