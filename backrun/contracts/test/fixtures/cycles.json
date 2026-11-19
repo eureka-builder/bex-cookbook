@@ -2456,6 +2456,32 @@
   ]
  },
  {
+  "name": "eth_spk_dai__v4_3000_v3_10000_v3_500",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xc20059e0317DE91738d13af027DfC4a50781b066",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xc20059e0317DE91738d13af027DfC4a50781b066",
+    "tokenOut": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "fee": 10000,
+    "tickSpacing": 200
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
   "name": "eth_usdc_claus__v3_100_v4_20000_v4_10000",
   "legs": [
    {
