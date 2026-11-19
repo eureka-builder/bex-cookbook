@@ -1,4 +1,6 @@
 {
   "note": "Rows for cycles seen after the window of eth-anchor-30d.json, in the same format. Each row names the window its counts and profit cover.",
-  "rows": []
+  "rows": [
+    {"window": "48 h to block 26448514", "legs": 3, "tokens": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2,0xc20059e0317de91738d13af027dfc4a50781b066,0x6b175474e89094c44da98b954eedeac495271d0f", "versions": "4,3,3", "pools": "0x39f748f252ffff5f2cb755824bd46bd4c0720ffcec1ed128b38a1049a0e70496,0xea6553121fc63a482b8056155afa9c7115c34e18,0x60594a405d53811d3bc4766596efd80fd545a270", "fees": "3000,10000,500", "spacings": "60,200,10", "arbs": 25, "profit_usd": 66.73, "suspect_usd": 0, "clean_arbs": 25, "med_profit_usd": 1.3688, "max_profit_usd": 7.99}
+  ]
 }
