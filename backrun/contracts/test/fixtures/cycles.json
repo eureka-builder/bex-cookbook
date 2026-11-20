@@ -8435,6 +8435,25 @@
   ]
  },
  {
+  "name": "eth_popo__v4_150000_v2",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0x7b43495c05581bD2D9326Fe9c1c18c62c63Dd2fc",
+    "fee": 150000,
+    "tickSpacing": 1500
+   },
+   {
+    "version": 2,
+    "tokenIn": "0x7b43495c05581bD2D9326Fe9c1c18c62c63Dd2fc",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 3000,
+    "tickSpacing": 0
+   }
+  ]
+ },
+ {
   "name": "eth_bunker__v3_100_v4_50000",
   "legs": [
    {
@@ -14134,6 +14153,32 @@
     "version": 3,
     "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_naoris_usdt__v4_9000_v3_3000_v4_100",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0x1b379A79c91a540b2bcd612b4d713f31De1b80cc",
+    "fee": 9000,
+    "tickSpacing": 90
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x1b379A79c91a540b2bcd612b4d713f31De1b80cc",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0x0000000000000000000000000000000000000000",
     "fee": 100,
     "tickSpacing": 1
    }
