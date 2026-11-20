@@ -547,6 +547,40 @@ legs = [
   { version = 3, token_in = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 100, tick_spacing = 1 },
 ]
 
+# 56 arbs, $17 / 30d (robust $15), pure-WETH
+[[cycles]]
+name = "eth_nct__v2_v3_10000"
+legs = [
+  { version = 2, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0x9E46A38F5DaaBe8683E10793b06749EEF7D733d1", fee = 3000, tick_spacing = 0 },
+  { version = 3, token_in = "0x9E46A38F5DaaBe8683E10793b06749EEF7D733d1", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 10000, tick_spacing = 200 },
+]
+
+# 23 arbs, $5 / 30d (robust $2), pure-WETH
+[[cycles]]
+name = "eth_usdt_cweb__v3_100_v2_v2"
+legs = [
+  { version = 3, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0xdAC17F958D2ee523a2206206994597C13D831ec7", fee = 100, tick_spacing = 1 },
+  { version = 2, token_in = "0xdAC17F958D2ee523a2206206994597C13D831ec7", token_out = "0x505B5eDa5E25a67E1c24A2BF1a527Ed9eb88Bf04", fee = 3000, tick_spacing = 0 },
+  { version = 2, token_in = "0x505B5eDa5E25a67E1c24A2BF1a527Ed9eb88Bf04", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 3000, tick_spacing = 0 },
+]
+
+# 20 arbs, $4 / 30d (robust $3), pure-ETH
+[[cycles]]
+name = "eth_naoris_usdt__v4_9000_v3_3000_v4_100"
+legs = [
+  { version = 4, token_in = "0x0000000000000000000000000000000000000000", token_out = "0x1b379A79c91a540b2bcd612b4d713f31De1b80cc", fee = 9000, tick_spacing = 90 },
+  { version = 3, token_in = "0x1b379A79c91a540b2bcd612b4d713f31De1b80cc", token_out = "0xdAC17F958D2ee523a2206206994597C13D831ec7", fee = 3000, tick_spacing = 60 },
+  { version = 4, token_in = "0xdAC17F958D2ee523a2206206994597C13D831ec7", token_out = "0x0000000000000000000000000000000000000000", fee = 100, tick_spacing = 1 },
+]
+
+# 18 arbs, $34 / 30d (robust $6), mixed
+[[cycles]]
+name = "eth_popo__v4_150000_v2"
+legs = [
+  { version = 4, token_in = "0x0000000000000000000000000000000000000000", token_out = "0x7b43495c05581bD2D9326Fe9c1c18c62c63Dd2fc", fee = 150000, tick_spacing = 1500 },
+  { version = 2, token_in = "0x7b43495c05581bD2D9326Fe9c1c18c62c63Dd2fc", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 3000, tick_spacing = 0 },
+]
+
 # 10 arbs, $30 / 30d (robust $30), mixed
 [[cycles]]
 name = "eth_cgt_usdc__v4_0_v4_200000_v3_100"
@@ -1743,14 +1777,6 @@ legs = [
   { version = 4, token_in = "0x0000000000000000000000000000000000000000", token_out = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", fee = 100, tick_spacing = 1 },
   { version = 4, token_in = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", token_out = "0x081599E4936D12c46Bd48913B2329115Cd26cbdd", fee = 100, tick_spacing = 1 },
   { version = 4, token_in = "0x081599E4936D12c46Bd48913B2329115Cd26cbdd", token_out = "0x0000000000000000000000000000000000000000", fee = 100, tick_spacing = 1 },
-]
-
-# 56 arbs, $17 / 30d (robust $15), pure-WETH
-[[cycles]]
-name = "eth_nct__v2_v3_10000"
-legs = [
-  { version = 2, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0x9E46A38F5DaaBe8683E10793b06749EEF7D733d1", fee = 3000, tick_spacing = 0 },
-  { version = 3, token_in = "0x9E46A38F5DaaBe8683E10793b06749EEF7D733d1", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 10000, tick_spacing = 200 },
 ]
 
 # 22 arbs, $19 / 30d (robust $15), mixed
@@ -4097,15 +4123,6 @@ legs = [
   { version = 3, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0xF8206A19Fca5999425358DE4E4cDEFc7F5C5D4cA", fee = 3000, tick_spacing = 60 },
   { version = 3, token_in = "0xF8206A19Fca5999425358DE4E4cDEFc7F5C5D4cA", token_out = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", fee = 3000, tick_spacing = 60 },
   { version = 3, token_in = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 100, tick_spacing = 1 },
-]
-
-# 23 arbs, $5 / 30d (robust $2), pure-WETH
-[[cycles]]
-name = "eth_usdt_cweb__v3_100_v2_v2"
-legs = [
-  { version = 3, token_in = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", token_out = "0xdAC17F958D2ee523a2206206994597C13D831ec7", fee = 100, tick_spacing = 1 },
-  { version = 2, token_in = "0xdAC17F958D2ee523a2206206994597C13D831ec7", token_out = "0x505B5eDa5E25a67E1c24A2BF1a527Ed9eb88Bf04", fee = 3000, tick_spacing = 0 },
-  { version = 2, token_in = "0x505B5eDa5E25a67E1c24A2BF1a527Ed9eb88Bf04", token_out = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", fee = 3000, tick_spacing = 0 },
 ]
 
 # 18 arbs, $6 / 30d (robust $2), pure-WETH
