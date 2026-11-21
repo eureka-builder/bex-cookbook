@@ -293,22 +293,25 @@ def main():
             why_dropped.setdefault(tuple(legs), why)
 
     cycles = {}  # legs tuple -> [arbs, profit_usd, robust_usd]
+    rare = set()  # legs of the rows marked rare: a path that opens seldom, kept below the floor (README, Filters)
     for r in rows:
         legs, why = legs_of(r)
         if why is None:
             bad = sorted({EXCLUDED_TOKENS[l[1]] for l in legs if l[1] in EXCLUDED_TOKENS})
             ids = [pool_id(l) for l in legs]
-            if r["arbs"] < args.min_arbs:
+            if r["arbs"] < args.min_arbs and not r.get("rare"):
                 why = "arbs < min"
             elif bad:
                 why = "excluded token (" + bad[0].split(":")[0] + ")"
             elif len(set(ids)) != len(ids):  # e.g. the same V2 WETH/X pair at both ends
                 why = "repeated pool"
-            elif r["profit_usd"] <= 0:  # every arb unpriced, mispriced or at a loss
+            elif r["profit_usd"] <= 0 and not r.get("rare"):  # every arb unpriced, mispriced or at a loss
                 why = "no clean profit"
         if why:
             drop(legs, why)
             continue
+        if r.get("rare"):
+            rare.add(tuple(legs))
         c = cycles.setdefault(tuple(legs), [0, 0.0, 0.0])
         if c[0]:
             dropped["merged duplicate (arbs and profit summed)"] += 1
@@ -384,12 +387,13 @@ def main():
         "# Window: a 30-day window, Ethereum mainnet, closed cycles anchored at ETH or WETH (one asset).",
         f"# Filters: Uniswap V2/V3/hookless V4, at least 2 legs, distinct pools, arbs >= {args.min_arbs}, clean profit > 0,",
         "#     pools checked against CREATE2 (V2/V3) or the hookless PoolKey id (V4); each mined direction is its own cycle.",
+        "#     A cycle marked rare is kept below the arbs and profit filters (cycles/README.md, Filters).",
         f"# Order: {'live order (--live) first, then ' if args.live else 'pins first, then '}by {args.rank}"
         f"{', one orientation per pool set' if args.live else ''} (the bot sends the first pending_cap groups).",
         "",
     ]
     for name, arbs, usd, robust, legs in sel:
-        toml += [f"# {arbs} arbs, ${usd:,.0f} / 30d (robust ${robust:,.0f}), {anchor(legs)}", "[[cycles]]", f'name = "{name}"', "legs = ["]
+        toml += [f"# {arbs} arbs, ${usd:,.0f} / 30d (robust ${robust:,.0f}), {anchor(legs)}{', rare' if tuple(legs) in rare else ''}", "[[cycles]]", f'name = "{name}"', "legs = ["]
         for v, a, b, fee, ts in legs:
             toml.append(f'  {{ version = {v}, token_in = "{checksum(a)}", token_out = "{checksum(b)}", fee = {fee}, tick_spacing = {ts} }},')
         toml += ["]", ""]

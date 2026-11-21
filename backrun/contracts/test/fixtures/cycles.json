@@ -1054,6 +1054,32 @@
   ]
  },
  {
+  "name": "eth_usdt_wbtc__v3_3000_v3_500_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
   "name": "eth_ewtb__v2_v3_3000",
   "legs": [
    {
@@ -1069,6 +1095,32 @@
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "fee": 3000,
     "tickSpacing": 60
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc_usdt__v3_500_v4_7_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 7,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
    }
   ]
  },
@@ -1678,6 +1730,32 @@
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "fee": 3000,
     "tickSpacing": 60
+   }
+  ]
+ },
+ {
+  "name": "eth_wbtc_usdc__v3_500_v3_3000_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
    }
   ]
  },
@@ -3005,6 +3083,32 @@
   ]
  },
  {
+  "name": "eth_usdt_usdc__v3_500_v4_8_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 8,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
   "name": "eth_nil_pha__v4_3000_v4_9000_v2",
   "legs": [
    {
@@ -3266,6 +3370,32 @@
     "tokenOut": "0x0000000000000000000000000000000000000000",
     "fee": 10000,
     "tickSpacing": 200
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc_usdt__v3_500_v3_100_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
    }
   ]
  },
@@ -4128,6 +4258,25 @@
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "fee": 3000,
     "tickSpacing": 0
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc__v3_3000_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
    }
   ]
  },
@@ -23940,6 +24089,77 @@
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "fee": 3000,
     "tickSpacing": 0
+   }
+  ]
+ },
+ {
+  "name": "eth_link_usdc__v3_500_v3_3000_v3_100",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc__v4_500_v3_3000",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 3000,
+    "tickSpacing": 60
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc_usdt__v4_500_v4_8_v4_500",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 8,
+    "tickSpacing": 1
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0x0000000000000000000000000000000000000000",
+    "fee": 500,
+    "tickSpacing": 10
    }
   ]
  }

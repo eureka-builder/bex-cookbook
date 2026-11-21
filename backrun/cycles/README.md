@@ -90,7 +90,9 @@ V4 boundary, and pays the profit in ETH. The query merges ETH and WETH between l
 with ETH or WETH at an inner position (none in the current rows).
 
 **Filters.** It keeps at least 2 legs, distinct pools (the same V2 WETH/X pair at both ends is one pool),
-`arbs >= --min-arbs` and a clean profit above 0. The query drops V4 pools on the WETH ERC20. The build drops
+`arbs >= --min-arbs` and a clean profit above 0. A row of `mined/added.json` with `"rare": true` skips these last
+two: it is a path through deep pools that opens seldom and is large when it opens. `cycles.toml` marks it `rare`.
+The query drops V4 pools on the WETH ERC20. The build drops
 cycles through `EXCLUDED_TOKENS` (transfer tax, rebasing): their executes revert. It keeps no list of expensive,
 empty or unprofitable cycles: the solver bounds the cost of every solve, and a cycle with no profit (an empty
 pool too) reverts `NoProfit` cheaply. Each mined direction is its own candidate.
