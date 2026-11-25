@@ -2418,6 +2418,32 @@
   ]
  },
  {
+  "name": "eth_a1313e_spx__v4_48000_v2_v2",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xA1313eb9f3A445606D9583bcAc3ebeB56a858279",
+    "fee": 48000,
+    "tickSpacing": 960
+   },
+   {
+    "version": 2,
+    "tokenIn": "0xA1313eb9f3A445606D9583bcAc3ebeB56a858279",
+    "tokenOut": "0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C",
+    "fee": 3000,
+    "tickSpacing": 0
+   },
+   {
+    "version": 2,
+    "tokenIn": "0xE0f63A424a4439cBE457D80E4f4b51aD25b2c56C",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 3000,
+    "tickSpacing": 0
+   }
+  ]
+ },
+ {
   "name": "eth_yellow_usdt__v2_v2_v3_100",
   "legs": [
    {
@@ -19028,6 +19054,25 @@
   ]
  },
  {
+  "name": "eth_forth__v2_v3_10000",
+  "legs": [
+   {
+    "version": 2,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x77FbA179C79De5B7653F68b5039Af940AdA60ce0",
+    "fee": 3000,
+    "tickSpacing": 0
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x77FbA179C79De5B7653F68b5039Af940AdA60ce0",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 10000,
+    "tickSpacing": 200
+   }
+  ]
+ },
+ {
   "name": "eth_vra__v3_3000_v2",
   "legs": [
    {
@@ -21101,6 +21146,32 @@
   ]
  },
  {
+  "name": "eth_usdt_usdc__v3_500_v4_100_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
   "name": "eth_ccdao_ena__v3_3000_v3_10000_v3_500",
   "legs": [
    {
@@ -21298,6 +21369,32 @@
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "fee": 3000,
     "tickSpacing": 60
+   }
+  ]
+ },
+ {
+  "name": "eth_dai_usdc__v2_v3_100_v3_100",
+  "legs": [
+   {
+    "version": 2,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "fee": 3000,
+    "tickSpacing": 0
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 100,
+    "tickSpacing": 1
    }
   ]
  },
@@ -23186,6 +23283,32 @@
   ]
  },
  {
+  "name": "eth_usdt_usdc__v4_100_v4_7_v4_500",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 7,
+    "tickSpacing": 1
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0x0000000000000000000000000000000000000000",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
   "name": "eth_usdt_wpokt__v4_100_v4_99999_v2",
   "legs": [
    {
@@ -24074,6 +24197,32 @@
   ]
  },
  {
+  "name": "eth_usdc_link__v3_100_v4_3000_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
   "name": "eth_ghx__v3_10000_v2",
   "legs": [
    {
@@ -24115,6 +24264,219 @@
     "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     "fee": 100,
     "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc_usdt__v3_500_v3_100_v3_100",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_dai__v3_500_v2",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 2,
+    "tokenIn": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 3000,
+    "tickSpacing": 0
+   }
+  ]
+ },
+ {
+  "name": "eth_usdt_usdc__v4_500_v4_7_v3_500",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 7,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
+  "name": "eth_dai_usdc__v3_500_v3_500_v3_100",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_aave_uni__v3_500_v3_3000_v3_500",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9",
+    "tokenOut": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 500,
+    "tickSpacing": 10
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc_wbtc__v3_100_v4_3000_v3_100",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "fee": 3000,
+    "tickSpacing": 60
+   },
+   {
+    "version": 3,
+    "tokenIn": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_reth__v3_500_v4_100",
+  "legs": [
+   {
+    "version": 3,
+    "tokenIn": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "tokenOut": "0xae78736Cd615f374D3085123A210448E74Fc6393",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0xae78736Cd615f374D3085123A210448E74Fc6393",
+    "tokenOut": "0x0000000000000000000000000000000000000000",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc_wbtc__v4_100_v3_500_v4_100",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 100,
+    "tickSpacing": 1
+   },
+   {
+    "version": 3,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 4,
+    "tokenIn": "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    "tokenOut": "0x0000000000000000000000000000000000000000",
+    "fee": 100,
+    "tickSpacing": 1
+   }
+  ]
+ },
+ {
+  "name": "eth_usdc__v4_500_v2",
+  "legs": [
+   {
+    "version": 4,
+    "tokenIn": "0x0000000000000000000000000000000000000000",
+    "tokenOut": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "fee": 500,
+    "tickSpacing": 10
+   },
+   {
+    "version": 2,
+    "tokenIn": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    "tokenOut": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "fee": 3000,
+    "tickSpacing": 0
    }
   ]
  },
